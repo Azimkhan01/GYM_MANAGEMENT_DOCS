@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaBars, FaTimes, FaTachometerAlt, FaUserPlus, FaEye, FaEdit, FaTrashAlt, FaClipboardList, FaWhatsapp, FaSms } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const navItems = [
   { id: 'dashboard', label: 'Dashboard', icon: <FaTachometerAlt /> },
@@ -35,14 +35,14 @@ const Sidebar = () => {
         <h1 onClick={()=>{nav('/')}} className="text-2xl font-bold text-blue-600 mb-8 text-center">🏋️ Gym Docs</h1>
         <nav className="flex flex-col gap-4">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.id}
-              href={`${item.id}`}
+              to={`/${item.id}`}
               className="flex items-center gap-3 text-gray-700 hover:text-blue-600 text-lg px-2 py-2 rounded-md hover:bg-blue-50 transition"
             >
               <span className="text-xl">{item.icon}</span>
               <span>{item.label}</span>
-            </a>
+            </Link>
           ))}
         </nav>
       </aside>
