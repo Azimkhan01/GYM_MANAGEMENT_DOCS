@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { FaTachometerAlt, FaUserPlus, FaEye, FaEdit, FaTrashAlt, FaClipboardList, FaWhatsapp, FaSms } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 function Home() {
   
@@ -25,15 +26,15 @@ function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
-            <a
+            <Link
               key={index}
-              href={feature.link}
+              to={feature.link}
               className="bg-white shadow hover:shadow-md transition rounded-xl p-6 flex flex-col items-center text-center group"
             >
               <div className="text-4xl text-blue-600 group-hover:scale-110 transition mb-4">{feature.icon}</div>
               <h2 className="text-xl font-semibold mb-2">{feature.title}</h2>
               <p className="text-gray-600 text-sm">{feature.desc}</p>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
